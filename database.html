@@ -2,14 +2,15 @@
 
 {% block content %}
 <a id="phpMyAdminUrl" class="hide" data-url="{{session.phpmyadminDir}}"></a>
-<div class="main-content">
+<div class="main-content pb55">
   <div class="container-fluid">
-    <div class="pos-box database-pos bgw" style="height:45px">
+    <div class="pos-box database-pos bgw mtb15" style="height:45px">
       <div class="tab-list">
         <div class="tabs-item active" data-type="mysql">{{data['lan']['H3']}}</div>
         <div class="tabs-item" data-type="sqlserver">{{data['lan']['H4']}}</div>
         <div class="tabs-item" data-type="mongodb">{{data['lan']['H5']}}</div>
         <div class="tabs-item" data-type="redis">{{data['lan']['H6']}}</div>
+        <div class="tabs-item" data-type="pgsql">{{data['lan']['H7']}}</div>
       </div>
     </div>
     <div class="db_table_view safe bgw mtb15 pd15 tab-view-box">
@@ -25,6 +26,9 @@
         </div>
         <div class="tab-con-block hide">
           <div id="bt_redis_view"></div>
+        </div>
+        <div class="tab-con-block hide">
+          <div id="bt_pgsql_table"></div>
         </div>
       </div>
       <div class="mask_layer" style="display: none;"><div class="prompt_description"></div></div>
@@ -164,6 +168,7 @@
 <script type="text/javascript" src="{{g.cdn_url}}/js/bt_upload.js?version={{g['version']}}&repair={{data['js_random']}}"></script>
 <script type="text/javascript" src="{{g.cdn_url}}/js/database.js?date={{g['version']}}&repair={{data['js_random']}}"></script>
 <script type="text/javascript">
+	var isSetup = '{{ data.isSetup }}' == 'True';
   bt.set_cookie('backup_path', "{{session['config']['backup_path']}}");
 </script>
 <!-- <script src="{{g.cdn_url}}/js/upload.js?date={{g['version']}}"></script> -->
