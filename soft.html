@@ -15,12 +15,12 @@
 						<div class="col-md-12">
 							<span class="filter-title f14 c4">应用搜索</span>
 							<div class="soft-search">
-								<form target="hid" onsubmit='soft.get_list(1,0,$("#SearchValue").val())'>
+								<!-- <form target="hid" onsubmit='soft.get_list(1,0,$("#SearchValue").val())'> -->
 									<input type="text" id="SearchValue" class="ser-text pull-left" placeholder="支持应用名称、字段模糊搜索"
 												 style="width:232px"/>
 									<button type="button" class="ser-sub pull-left"
 													onclick='soft.get_list(1,0,$("#SearchValue").val())'></button>
-								</form>
+								<!-- </form> -->
 								<iframe name='hid' id="hid" style="display:none"></iframe>
 							</div>
 						</div>
@@ -33,6 +33,8 @@
 				</div>
 				<div class="divtable pd15 relative">
 					<button class="btn btn-default btn-sm" onclick="soft.flush_cache()" title="从云端更新列表" style="position:absolute;top:-49px;right:15px">更新软件列表 / 支付状态</button>
+					<div id="updata_pro_info"></div>
+					<div id="commonly_software" class="commonly_software"><div class="commonly_software_title">最近使用入口</div><div class="commonly_software_list"></div></div>
 					<table id="softList" class="table table-hover" width="100%" cellspacing="0" cellpadding="0" border="0"></table>
 					<div id='softPage' class="dataTables_paginate paging_bootstrap page"></div>
 				</div>
@@ -54,6 +56,11 @@
 	$(document).ready(function () {
 		soft.get_list();
 		soft.render_soft_recommend() // 渲染常用软件列表
+		$('#SearchValue').keyup(function (e) {
+			if (e.keyCode == 13) {
+				soft.get_list(1,0,$("#SearchValue").val())
+			}
+		});
 	});
 </script>
 {% endblock %}
