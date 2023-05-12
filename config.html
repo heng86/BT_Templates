@@ -1,24 +1,41 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "layout.html" %} {% block content %}
 <link href="{{g.cdn_url}}/layer/layer.css" rel="stylesheet" />
 <div class="main-content">
-  <div class="container-fluid" style="padding-bottom:54px">
-    <div class="pos-box bgw mtb15 radius4" >
-      <div class="flex tab-list" id="configTab" style="justify-content: space-between;">
+	<div class="container-fluid" style="padding-bottom: 54px">
+		<div class="pos-box bgw mtb15 radius4">
+			<div
+					class="flex tab-list"
+					id="configTab"
+					style="justify-content: space-between"
+			>
 				<div class="flex">
 					<div class="tabs-item" data-type="allConfig">全部设置</div>
-					<div class="tabs-item" data-type="baseConfig">基础设置</div>
-					<div class="tabs-item" data-type="panelConfig">{{data['lan']['H2']}}</div>
+					<div class="tabs-item" data-type="baseConfig">
+						<span>基础设置</span>
+					</div>
+					<div class="tabs-item" data-type="panelConfig">
+						{{data['lan']['H2']}}
+					</div>
 					<div class="tabs-item" data-type="securityConfig">安全设置</div>
 					<div class="tabs-item" data-type="pushConfig">通知设置</div>
+					<div class="tabs-item" data-type="alertConfig">告警通知</div>
 				</div>
-				<form class="search">
-					<input type="text" id="search-val" name="search_keyword" class="ser-text pull-left" placeholder="搜索设置" />
-					<button type="button" class="ser-sub pull-left" id="search-btn"></button>
-				</form>
-      </div>
-    </div>
-    <div class="setbox bgw mtb15 tab-view-box configure-box">
+				<div class="search pull-right">
+					<input
+							type="text"
+							id="search-val"
+							class="ser-text pull-left"
+							placeholder="搜索设置"
+					/>
+					<button
+							type="button"
+							class="ser-sub pull-left"
+							id="search-btn"
+					></button>
+				</div>
+			</div>
+		</div>
+		<div class="setbox bgw mtb15 tab-view-box configure-box">
 			<div class="panel-search hide" data-type="searchConfig">
 				<div class="configure-title">搜索设置</div>
 				<div style="padding-top: 25px"></div>
@@ -33,15 +50,15 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										id="closePanel"
-										class="btswitch btswitch-ios"
-										type="checkbox"
-										name="close_panel"
+											class="btswitch btswitch-ios"
+											id="closePanel"
+											type="checkbox"
+											name="close_panel"
 									/>
 									<label
-										class="btswitch-btn"
-										for="closePanel"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="closePanel"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 							</div>
@@ -50,28 +67,27 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="line" title="面板SSL">
 						<div class="line-title">面板SSL</div>
 						<div class="line-form">
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="panelSsl"
-										type="checkbox"
-										name="ssl"
+											class="btswitch btswitch-ios"
+											id="panelSsl"
+											type="checkbox"
+											name="ssl"
 									/>
 									<label
-										class="btswitch-btn"
-										for="panelSsl"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="panelSsl"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 								<button
-									ype="button"
-									class="btn btn-default btn-xs panelSslConfig"
-									style="vertical-align: middle; margin-left: 10px"
+										type="button"
+										class="btn btn-default btn-xs panelSslConfig"
+										style="vertical-align: middle; margin-left: 10px"
 								>
 									面板SSL配置
 								</button>
@@ -81,8 +97,8 @@
 									href="https://www.bt.cn/bbs/thread-704-1-1.html"
 									class="btlink"
 									target="_blank"
-									>了解详情</a
-								>
+							>了解详情</a
+							>
 							</div>
 						</div>
 					</div>
@@ -93,21 +109,21 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="apiInterface"
-										type="checkbox"
-										name="api"
+											class="btswitch btswitch-ios"
+											id="apiInterface"
+											type="checkbox"
+											name="api"
 									/>
 									<label
-										class="btswitch-btn"
-										for="apiInterface"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="apiInterface"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 								<button
-									ype="button"
-									class="btn btn-default btn-xs apiInterfaceBtn"
-									style="vertical-align: middle; margin-left: 10px"
+										type="button"
+										class="btn btn-default btn-xs apiInterfaceBtn"
+										style="vertical-align: middle; margin-left: 10px"
 								>
 									API接口配置
 								</button>
@@ -117,8 +133,8 @@
 									href="https://www.bt.cn/bbs/thread-20376-1-1.html"
 									class="btlink"
 									target="_blank"
-									>了解详情</a
-								>
+							>了解详情</a
+							>
 							</div>
 						</div>
 					</div>
@@ -129,15 +145,15 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="monitorIPv6"
-										type="checkbox"
-										name="ipv6"
+											class="btswitch btswitch-ios"
+											id="monitorIPv6"
+											type="checkbox"
+											name="ipv6"
 									/>
 									<label
-										class="btswitch-btn"
-										for="monitorIPv6"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="monitorIPv6"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 							</div>
@@ -151,15 +167,15 @@
 							<div class="line">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="basicAuth"
-										type="checkbox"
-										name="basic_auth"
+											class="btswitch btswitch-ios"
+											id="basicAuth"
+											type="checkbox"
+											name="basic_auth"
 									/>
 									<label
-										class="btswitch-btn"
-										for="basicAuth"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="basicAuth"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 							</div>
@@ -169,8 +185,8 @@
 								href="https://www.bt.cn/bbs/thread-34374-1-1.html"
 								class="btlink"
 								target="_blank"
-								>了解详情</a
-							>
+						>了解详情</a
+						>
 						</div>
 					</div>
 
@@ -180,21 +196,21 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="checkTwoStep"
-										type="checkbox"
-										name="check_two_step"
+											class="btswitch btswitch-ios"
+											id="checkTwoStep"
+											type="checkbox"
+											name="check_two_step"
 									/>
 									<label
-										class="btswitch-btn"
-										for="checkTwoStep"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="checkTwoStep"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 								<button
-									ype="button"
-									class="btn btn-default btn-xs checkTwoStepConfig"
-									style="vertical-align: middle; margin-left: 10px"
+										type="button"
+										class="btn btn-default btn-xs checkTwoStepConfig"
+										style="vertical-align: middle; margin-left: 10px"
 								>
 									动态口令配置
 								</button>
@@ -202,11 +218,11 @@
 							<div class="line-row-tips">
 								(Google
 								Authenticator，谷歌身份认证)为面板提供动态口令的登录的验证，<a
-									href="https://www.bt.cn/bbs/forum.php?mod=viewthread&tid=37437"
+									href="https://www.bt.cn/bbs/forum.php?mod=viewthread&tid=105839"
 									class="btlink"
 									target="_blank"
-									>了解详情</a
-								>
+							>了解详情</a
+							>
 							</div>
 						</div>
 					</div>
@@ -215,16 +231,16 @@
 						<div class="line-title">面板别名</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{session['title']}}"
-								name="webname"
+									type="text"
+									class="bt-input-text"
+									value="{{session['title']}}"
+									name="webname"
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
@@ -235,23 +251,23 @@
 						<div class="line-title">绑定域名</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['panel']['domain']}}"
-								name="domain"
+									type="text"
+									class="bt-input-text"
+									value="{{data['panel']['domain']}}"
+									name="domain"
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
 						<div class="line-row-tips">
 							为面板绑定一个访问域名，<span class="color-red"
-								>注意：一旦绑定域名，只能通过域名访问面板</span
-							>
+						>注意：一旦绑定域名，只能通过域名访问面板</span
+						>
 						</div>
 					</div>
 
@@ -259,24 +275,24 @@
 						<div class="line-title">授权IP</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								placeholder="示例: 1.1.1.1,2.2.2.1-2.2.2.2"
-								name="limitip"
-								value="{{data['panel']['limitip']}}"
+									type="text"
+									class="bt-input-text"
+									placeholder="示例: 1.1.1.1,2.2.2.1-2.2.2.2"
+									name="limitip"
+									value="{{data['panel']['limitip']}}"
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
 						<div class="line-row-tips">
 							设置访问授权IP，多个IP地址，请使用“,”分割，<span class="color-red"
-								>注意：一旦设置授权IP，只有指定IP的电脑能访问面板</span
-							>
+						>注意：一旦设置授权IP，只有指定IP的电脑能访问面板</span
+						>
 						</div>
 					</div>
 
@@ -284,16 +300,16 @@
 						<div class="line-title">服务器IP</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['panel']['address']}}"
-								name="address"
+									type="text"
+									class="bt-input-text"
+									value="{{data['panel']['address']}}"
+									name="address"
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
@@ -306,16 +322,16 @@
 						<div class="line-title">服务器时间</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['systemdate']}}"
-								name="systemdate"
-								disabled
+									type="text"
+									class="bt-input-text"
+									value="{{data['systemdate']}}"
+									name="systemdate"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 syncDateBtn"
+								type="button"
+								class="btn btn-success btn-sm ml5 syncDateBtn"
 						>
 							同步
 						</button>
@@ -326,19 +342,19 @@
 						<div class="line-title">默认建站目录</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['sites_path']}}"
-								name="sites_path"
+									type="text"
+									class="bt-input-text"
+									value="{{data['sites_path']}}"
+									name="sites_path"
 							/>
 							<div class="selected-file sitesPath">
 								<span class="glyphicon glyphicon-folder-open cursor"></span>
 							</div>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
@@ -349,19 +365,19 @@
 						<div class="line-title">默认备份目录</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['backup_path']}}"
-								name="backup_path"
+									type="text"
+									class="bt-input-text"
+									value="{{data['backup_path']}}"
+									name="backup_path"
 							/>
 							<div class="selected-file backupPath">
 								<span class="glyphicon glyphicon-folder-open cursor"></span>
 							</div>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
@@ -372,23 +388,28 @@
 						<div class="line-title">面板端口</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['panel']['port']}}"
-								name="port"
-								disabled
+									type="text"
+									class="bt-input-text"
+									value="{{data['panel']['port']}}"
+									name="port"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 setPanelPort"
+								type="button"
+								class="btn btn-success btn-sm ml5 setPanelPort"
 						>
 							设置
 						</button>
 						<div class="line-row-tips">
 							建议端口范围8888 - 65535，<span class="color-red"
-								>注意：有安全组的服务器请提前在安全组放行新端口</span
-							>
+						>注意：有安全组的服务器请提前在安全组放行新端口</span
+						>，<a
+								href="https://www.bt.cn/bbs/thread-109457-1-1.html"
+								class="btlink"
+								target="_blank"
+						>了解详情</a
+						>
 						</div>
 					</div>
 
@@ -396,16 +417,16 @@
 						<div class="line-title">安全入口</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['panel']['admin_path']}}"
-								name="entrance"
-								disabled
+									type="text"
+									class="bt-input-text"
+									value="{{data['panel']['admin_path']}}"
+									name="entrance"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 setSafetyEntrance"
+								type="button"
+								class="btn btn-success btn-sm ml5 setSafetyEntrance"
 						>
 							设置
 						</button>
@@ -418,16 +439,16 @@
 						<div class="line-title">面板账号</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								name="username"
-								value="{{session['username']}}"
-								disabled
+									type="text"
+									class="bt-input-text"
+									name="username"
+									value="{{session['username']}}"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 editPanelAccount"
+								type="button"
+								class="btn btn-success btn-sm ml5 editPanelAccount"
 						>
 							设置
 						</button>
@@ -438,16 +459,16 @@
 						<div class="line-title">面板密码</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								name="password"
-								value="********"
-								disabled
+									type="text"
+									class="bt-input-text"
+									name="password"
+									value="********"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 editPanelPassword"
+								type="button"
+								class="btn btn-success btn-sm ml5 editPanelPassword"
 						>
 							设置
 						</button>
@@ -458,18 +479,18 @@
 						<div class="line-title">绑定宝塔账号</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								name="bind_user_info"
-								disabled
+									type="text"
+									class="bt-input-text"
+									name="bind_user_info"
+									disabled
 							/>
 						</div>
 						<button type="button" class="btn btn-success btn-sm ml5 bindBtUser">
 							设置
 						</button>
 						<button
-							type="button"
-							class="btn btn-default btn-sm ml5 unbindBtUser"
+								type="button"
+								class="btn btn-default btn-sm ml5 unbindBtUser"
 						>
 							解绑
 						</button>
@@ -482,8 +503,8 @@
 						<div class="line-title">临时访问授权</div>
 						<div class="line-input">
 							<button
-								type="button"
-								class="btn btn-success btn-sm setTempAuthView"
+									type="button"
+									class="btn btn-success btn-sm setTempAuthView"
 							>
 								临时访问授权管理
 							</button>
@@ -491,27 +512,27 @@
 						<div class="line-row-tips">为非管理员临时提供面板访问权限</div>
 					</div>
 
-					<div class="line" title="消息通道">
+					<!-- <div class="line" title="消息通道">
 						<div class="line-title">消息通道</div>
 						<div class="line-input">
 							<div class="line-row">
 								<a href="javascript:;" class="bt_warning setMessageChannelMail"
-									>邮箱未配置</a
+								>邮箱未配置</a
 								>
 								<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
 								<a
-									href="javascript:;"
-									class="bt_warning setMessageChannelNailNail"
-									>钉钉/飞书/企业微信未配置</a
+										href="javascript:;"
+										class="bt_warning setMessageChannelNailNail"
+								>钉钉/飞书/企业微信未配置</a
 								>
 								<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
 								<a href="javascript:;" class="bt_warning setMessageChannelSMS"
-									>短信未配置</a
+								>短信未配置</a
 								>&nbsp;&nbsp;&nbsp;&nbsp;
 							</div>
 							<button
-								type="button"
-								class="btn btn-success btn-xs setMessageChannelMailBtn"
+									type="button"
+									class="btn btn-success btn-xs setMessageChannelMailBtn"
 							>
 								设置消息通道
 							</button>
@@ -519,27 +540,26 @@
 						<div class="line-row-tips">
 							设置消息推送配置，设置后可以将消息推送至邮箱、钉钉/飞书/企业微信、短信
 						</div>
-					</div>
+					</div> -->
 
 					<div class="line login-alarm-line" title="面板登录告警">
 						<div class="line-title">面板登录告警</div>
 						<div class="line-input">
 							<div class="line-row">
 								<a href="javascript:;" class="bt_warning setAlarmMail"
-									>告警通知未配置</a
+								>告警通知未配置</a
 								>
 							</div>
 							<button
-								type="button"
-								class="btn btn-success btn-xs setAlarmMailBtn"
-								style="margin-left: 8px"
+									type="button"
+									class="btn btn-success btn-xs setAlarmMailBtn"
+									style="margin-left: 8px"
 							>
 								设置登录告警
 							</button>
 						</div>
 						<div class="line-row-tips">
-							设置面板登录告警提示，每次登录面板都会使用消息推送功能，发送消息至<span
-							></span>
+							<b style="color:#fc6d26">【当前功能已经移植至告警通知】</b>
 						</div>
 					</div>
 
@@ -551,7 +571,7 @@
 							</button>
 						</div>
 						<div class="line-row-tips">
-							设置消息推送提示，服务停止时将消息发送至邮件、钉钉/飞书/企业微信、短信
+							<b style="color:#fc6d26">【当前功能已经移植至告警通知】</b>
 						</div>
 					</div>
 				</div>
@@ -565,15 +585,15 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="closePanel"
-										type="checkbox"
-										name="close_panel"
+											class="btswitch btswitch-ios"
+											id="closePanel"
+											type="checkbox"
+											name="close_panel"
 									/>
 									<label
-										class="btswitch-btn"
-										for="closePanel"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="closePanel"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 							</div>
@@ -589,15 +609,15 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="monitorIPv6"
-										type="checkbox"
-										name="ipv6"
+											class="btswitch btswitch-ios"
+											id="monitorIPv6"
+											type="checkbox"
+											name="ipv6"
 									/>
 									<label
-										class="btswitch-btn"
-										for="monitorIPv6"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="monitorIPv6"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 							</div>
@@ -611,15 +631,15 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="offlineMode"
-										type="checkbox"
-										name="is_local"
+											class="btswitch btswitch-ios"
+											id="offlineMode"
+											type="checkbox"
+											name="is_local"
 									/>
 									<label
-										class="btswitch-btn"
-										for="offlineMode"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="offlineMode"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 							</div>
@@ -635,15 +655,15 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="developerMode"
-										type="checkbox"
-										name="debug"
+											class="btswitch btswitch-ios"
+											id="developerMode"
+											type="checkbox"
+											name="debug"
 									/>
 									<label
-										class="btswitch-btn"
-										for="developerMode"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="developerMode"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 							</div>
@@ -659,21 +679,21 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="apiInterface"
-										type="checkbox"
-										name="api"
+											class="btswitch btswitch-ios"
+											id="apiInterface"
+											type="checkbox"
+											name="api"
 									/>
 									<label
-										class="btswitch-btn"
-										for="apiInterface"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="apiInterface"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 								<button
-									ype="button"
-									class="btn btn-default btn-xs apiInterfaceBtn"
-									style="vertical-align: middle; margin-left: 10px"
+										type="button"
+										class="btn btn-default btn-xs apiInterfaceBtn"
+										style="vertical-align: middle; margin-left: 10px"
 								>
 									API接口配置
 								</button>
@@ -683,8 +703,8 @@
 									href="https://www.bt.cn/bbs/thread-20376-1-1.html"
 									class="btlink"
 									target="_blank"
-									>了解详情</a
-								>
+							>了解详情</a
+							>
 							</div>
 						</div>
 					</div>
@@ -695,15 +715,15 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="onlineService"
-										type="checkbox"
-										name="show_workorder"
+											class="btswitch btswitch-ios"
+											id="onlineService"
+											type="checkbox"
+											name="show_workorder"
 									/>
 									<label
-										class="btswitch-btn"
-										for="onlineService"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="onlineService"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 							</div>
@@ -711,20 +731,42 @@
 						</div>
 					</div>
 
+					<div class="line" title="用户体验改善计划">
+						<div class="line-title">用户体验改善计划</div>
+						<div class="line-form">
+							<div class="line-row">
+								<div class="ssh-item" style="margin-left: 0; padding: 0">
+									<input
+											class="btswitch btswitch-ios"
+											id="setImprovement"
+											type="checkbox"
+											name="improvement"
+									/>
+									<label
+											class="btswitch-btn"
+											for="setImprovement"
+											style="margin-bottom: 0"
+									></label>
+								</div>
+							</div>
+							<div class="line-row-tips">参加用户体验改善计划来帮助我们改进产品，<a href="https://www.bt.cn/new/agreement_privacy.html" target="_blank" class="btlink">查看隐私政策</a></div>
+						</div>
+					</div>
+
 					<div class="line" title="面板别名">
 						<div class="line-title">面板别名</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{session['title']}}"
-								name="webname"
+									type="text"
+									class="bt-input-text"
+									value="{{session['title']}}"
+									name="webname"
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
@@ -735,16 +777,16 @@
 						<div class="line-title">超时时间</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['session_timeout']}}"
-								name="session_timeout"
+									type="text"
+									class="bt-input-text"
+									value="{{data['session_timeout']}}"
+									name="session_timeout"
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
@@ -759,19 +801,19 @@
 						<div class="line-title">默认建站目录</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['sites_path']}}"
-								name="sites_path"
+									type="text"
+									class="bt-input-text"
+									value="{{data['sites_path']}}"
+									name="sites_path"
 							/>
 							<div class="selected-file sitesPath">
 								<span class="glyphicon glyphicon-folder-open cursor"></span>
 							</div>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
@@ -782,19 +824,19 @@
 						<div class="line-title">默认备份目录</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['backup_path']}}"
-								name="backup_path"
+									type="text"
+									class="bt-input-text"
+									value="{{data['backup_path']}}"
+									name="backup_path"
 							/>
 							<div class="selected-file backupPath">
 								<span class="glyphicon glyphicon-folder-open cursor"></span>
 							</div>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
@@ -805,16 +847,16 @@
 						<div class="line-title">服务器IP</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['panel']['address']}}"
-								name="address"
+									type="text"
+									class="bt-input-text"
+									value="{{data['panel']['address']}}"
+									name="address"
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
@@ -827,16 +869,16 @@
 						<div class="line-title">服务器时间</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['systemdate']}}"
-								name="systemdate"
-								disabled
+									type="text"
+									class="bt-input-text"
+									value="{{data['systemdate']}}"
+									name="systemdate"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 syncDateBtn"
+								type="button"
+								class="btn btn-success btn-sm ml5 syncDateBtn"
 						>
 							同步
 						</button>
@@ -847,16 +889,16 @@
 						<div class="line-title">面板账号</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								name="username"
-								value="{{session['username']}}"
-								disabled
+									type="text"
+									class="bt-input-text"
+									name="username"
+									value="{{session['username']}}"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 editPanelAccount"
+								type="button"
+								class="btn btn-success btn-sm ml5 editPanelAccount"
 						>
 							设置
 						</button>
@@ -867,16 +909,16 @@
 						<div class="line-title">面板密码</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								name="password"
-								value="********"
-								disabled
+									type="text"
+									class="bt-input-text"
+									name="password"
+									value="********"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 editPanelPassword"
+								type="button"
+								class="btn btn-success btn-sm ml5 editPanelPassword"
 						>
 							设置
 						</button>
@@ -887,18 +929,18 @@
 						<div class="line-title">绑定宝塔账号</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								name="bind_user_info"
-								disabled
+									type="text"
+									class="bt-input-text"
+									name="bind_user_info"
+									disabled
 							/>
 						</div>
 						<button type="button" class="btn btn-success btn-sm ml5 bindBtUser">
 							设置
 						</button>
 						<button
-							type="button"
-							class="btn btn-default btn-sm ml5 unbindBtUser"
+								type="button"
+								class="btn btn-default btn-sm ml5 unbindBtUser"
 						>
 							解绑
 						</button>
@@ -911,15 +953,15 @@
 						<div class="line-title">面板菜单栏隐藏</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								name="menu_hide_list"
-								disabled
+									type="text"
+									class="bt-input-text"
+									name="menu_hide_list"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 menuBarManage"
+								type="button"
+								class="btn btn-success btn-sm ml5 menuBarManage"
 						>
 							设置
 						</button>
@@ -930,15 +972,15 @@
 						<div class="line-title">面板云端请求方式</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								name="request_type"
-								disabled
+									type="text"
+									class="bt-input-text"
+									name="request_type"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 request_type"
+								type="button"
+								class="btn btn-success btn-sm ml5 request_type"
 						>
 							设置
 						</button>
@@ -951,15 +993,15 @@
 						<div class="line-title">面板云端请求线路</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								name="request_iptype"
-								disabled
+									type="text"
+									class="bt-input-text"
+									name="request_iptype"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 request_iptype"
+								type="button"
+								class="btn btn-success btn-sm ml5 request_iptype"
 						>
 							设置
 						</button>
@@ -972,15 +1014,15 @@
 						<div class="line-title">面板云端通讯节点配置</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								name="node_config"
-								disabled
+									type="text"
+									class="bt-input-text"
+									name="node_config"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 node_config"
+								type="button"
+								class="btn btn-success btn-sm ml5 node_config"
 						>
 							设置
 						</button>
@@ -993,27 +1035,57 @@
 			<div class="panel-config hide" data-type="securityConfig">
 				<div class="configure-title">安全设置</div>
 				<div class="configure-block">
+					<div class="line" title="面板安全告警">
+						<div class="line-title">面板安全告警</div>
+						<div class="line-form">
+							<div class="line-row">
+								<div class="ssh-item" style="margin-left: 0; padding: 0">
+									<input
+											class="btswitch btswitch-ios"
+											id="panelSafe"
+											type="checkbox"
+											name="panel_safe"
+									/>
+									<label
+											class="btswitch-btn"
+											for="panelSafe"
+											style="margin-bottom: 0"
+									></label>
+								</div>
+							</div>
+							<button
+									type="button"
+									class="btn btn-default btn-xs panelSafeAlertMethod"
+									style="vertical-align: middle; margin-left: 10px"
+							>
+								提醒方式
+							</button>
+						</div>
+						<div class="line-row-tips">
+							告警内容包含：面板用户变更、面板日志删除、面板开启开发者、面板开启API
+						</div>
+					</div>
 					<div class="line" title="面板SSL">
 						<div class="line-title">面板SSL</div>
 						<div class="line-form">
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="panelSsl"
-										type="checkbox"
-										name="ssl"
+											class="btswitch btswitch-ios"
+											id="panelSsl"
+											type="checkbox"
+											name="ssl"
 									/>
 									<label
-										class="btswitch-btn"
-										for="panelSsl"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="panelSsl"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 								<button
-									ype="button"
-									class="btn btn-default btn-xs panelSslConfig"
-									style="vertical-align: middle; margin-left: 10px"
+										type="button"
+										class="btn btn-default btn-xs panelSslConfig"
+										style="vertical-align: middle; margin-left: 10px"
 								>
 									面板SSL配置
 								</button>
@@ -1023,8 +1095,8 @@
 									href="https://www.bt.cn/bbs/thread-704-1-1.html"
 									class="btlink"
 									target="_blank"
-									>了解详情</a
-								>
+							>了解详情</a
+							>
 							</div>
 						</div>
 					</div>
@@ -1035,15 +1107,15 @@
 							<div class="line">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="basicAuth"
-										type="checkbox"
-										name="basic_auth"
+											class="btswitch btswitch-ios"
+											id="basicAuth"
+											type="checkbox"
+											name="basic_auth"
 									/>
 									<label
-										class="btswitch-btn"
-										for="basicAuth"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="basicAuth"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 							</div>
@@ -1053,8 +1125,8 @@
 								href="https://www.bt.cn/bbs/thread-34374-1-1.html"
 								class="btlink"
 								target="_blank"
-								>了解详情</a
-							>
+						>了解详情</a
+						>
 						</div>
 					</div>
 
@@ -1064,21 +1136,21 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="checkTwoStep"
-										type="checkbox"
-										name="check_two_step"
+											class="btswitch btswitch-ios"
+											id="checkTwoStep"
+											type="checkbox"
+											name="check_two_step"
 									/>
 									<label
-										class="btswitch-btn"
-										for="checkTwoStep"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="checkTwoStep"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 								<button
-									ype="button"
-									class="btn btn-default btn-xs checkTwoStepConfig"
-									style="vertical-align: middle; margin-left: 10px"
+										type="button"
+										class="btn btn-default btn-xs checkTwoStepConfig"
+										style="vertical-align: middle; margin-left: 10px"
 								>
 									动态口令配置
 								</button>
@@ -1086,11 +1158,11 @@
 							<div class="line-row-tips">
 								(Google
 								Authenticator，谷歌身份认证)为面板提供动态口令的登录的验证，<a
-									href="https://www.bt.cn/bbs/forum.php?mod=viewthread&tid=37437"
+									href="https://www.bt.cn/bbs/forum.php?mod=viewthread&tid=105839"
 									class="btlink"
 									target="_blank"
-									>了解详情</a
-								>
+							>了解详情</a
+							>
 							</div>
 						</div>
 					</div>
@@ -1101,21 +1173,21 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="sslVerify"
-										type="checkbox"
-										name="ssl_verify"
+											class="btswitch btswitch-ios"
+											id="sslVerify"
+											type="checkbox"
+											name="ssl_verify"
 									/>
 									<label
-										class="btswitch-btn"
-										for="sslVerify"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="sslVerify"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 								<button
-									ype="button"
-									class="btn btn-default btn-xs sslVerifyConfig"
-									style="vertical-align: middle; margin-left: 10px"
+										type="button"
+										class="btn btn-default btn-xs sslVerifyConfig"
+										style="vertical-align: middle; margin-left: 10px"
 								>
 									访问设备验证配置
 								</button>
@@ -1125,8 +1197,8 @@
 									href="https://www.bt.cn/bbs/thread-77863-1-1.html"
 									class="btlink"
 									target="_blank"
-									>了解详情</a
-								>
+							>了解详情</a
+							>
 							</div>
 						</div>
 					</div>
@@ -1137,23 +1209,23 @@
 							<div class="line-row">
 								<div class="ssh-item" style="margin-left: 0; padding: 0">
 									<input
-										class="btswitch btswitch-ios"
-										id="passwordSafe"
-										type="checkbox"
-										name="paw_complexity"
+											class="btswitch btswitch-ios"
+											id="passwordSafe"
+											type="checkbox"
+											name="paw_complexity"
 									/>
 									<label
-										class="btswitch-btn"
-										for="passwordSafe"
-										style="margin-bottom: 0"
+											class="btswitch-btn"
+											for="passwordSafe"
+											style="margin-bottom: 0"
 									></label>
 								</div>
 							</div>
 							<div class="line-row-tips">
 								为面板密码提供复杂度验证方式，复杂度验证规则：<span
 									class="color-red"
-									>密码必须满足密码长度大于8位且大写字母、小写字母、数字、特殊字符至少3项组合</span
-								>
+							>密码必须满足密码长度大于8位且大写字母、小写字母、数字、特殊字符至少3项组合</span
+							>
 							</div>
 						</div>
 					</div>
@@ -1162,16 +1234,16 @@
 						<div class="line-title">绑定域名</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['panel']['domain']}}"
-								name="domain"
+									type="text"
+									class="bt-input-text"
+									value="{{data['panel']['domain']}}"
+									name="domain"
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
@@ -1186,17 +1258,17 @@
 						<div class="line-title">授权IP</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								placeholder="示例: 1.1.1.1,2.2.2.1-2.2.2.2"
-								name="limitip"
-								value="{{data['panel']['limitip']}}"
+									type="text"
+									class="bt-input-text"
+									placeholder="示例: 1.1.1.1,2.2.2.1-2.2.2.2"
+									name="limitip"
+									value="{{data['panel']['limitip']}}"
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 savePanelConfig"
-							disabled
+								type="button"
+								class="btn btn-success btn-sm ml5 savePanelConfig"
+								disabled
 						>
 							保存
 						</button>
@@ -1211,23 +1283,28 @@
 						<div class="line-title">面板端口</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['panel']['port']}}"
-								name="port"
-								disabled
+									type="text"
+									class="bt-input-text"
+									value="{{data['panel']['port']}}"
+									name="port"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 setPanelPort"
+								type="button"
+								class="btn btn-success btn-sm ml5 setPanelPort"
 						>
 							设置
 						</button>
 						<div class="line-row-tips">
 							建议端口范围8888 - 65535，<span class="color-red"
-								>注意：有安全组的服务器请提前在安全组放行新端口</span
-							>
+						>注意：有安全组的服务器请提前在安全组放行新端口</span
+						>，<a
+								href="https://www.bt.cn/bbs/thread-109457-1-1.html"
+								class="btlink"
+								target="_blank"
+						>了解详情</a
+						>
 						</div>
 					</div>
 
@@ -1235,16 +1312,16 @@
 						<div class="line-title">安全入口</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="{{data['panel']['admin_path']}}"
-								name="entrance"
-								disabled
+									type="text"
+									class="bt-input-text"
+									value="{{data['panel']['admin_path']}}"
+									name="entrance"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 setSafetyEntrance"
+								type="button"
+								class="btn btn-success btn-sm ml5 setSafetyEntrance"
 						>
 							设置
 						</button>
@@ -1257,16 +1334,16 @@
 						<div class="line-title">未认证响应状态</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value=""
-								name="status_code"
-								disabled
+									type="text"
+									class="bt-input-text"
+									value=""
+									name="status_code"
+									disabled
 							/>
 						</div>
 						<button
-							type="button"
-							class="btn btn-success btn-sm ml5 setStatusCodeView"
+								type="button"
+								class="btn btn-success btn-sm ml5 setStatusCodeView"
 						>
 							设置
 						</button>
@@ -1279,15 +1356,15 @@
 						<div class="line-title">密码过期时间</div>
 						<div class="line-input">
 							<input
-								type="text"
-								class="bt-input-text"
-								value="未设置"
-								name="paw_expire_time"
-								disabled
+									type="text"
+									class="bt-input-text"
+									value="未设置"
+									name="paw_expire_time"
+									disabled
 							/>
 							<button
-								type="button"
-								class="btn btn-success btn-sm ml5 setPawExpiration"
+									type="button"
+									class="btn btn-success btn-sm ml5 setPawExpiration"
 							>
 								设置
 							</button>
@@ -1301,8 +1378,8 @@
 						<div class="line-title">临时访问授权</div>
 						<div class="line-input">
 							<button
-								type="button"
-								class="btn btn-success btn-sm setTempAuthView"
+									type="button"
+									class="btn btn-success btn-sm setTempAuthView"
 							>
 								临时访问授权管理
 							</button>
@@ -1314,56 +1391,24 @@
 			<div class="panel-config hide" data-type="pushConfig">
 				<div class="configure-title">通知设置</div>
 				<div class="configure-block">
-					<div class="line" title="消息通道">
-						<div class="line-title">消息通道</div>
-						<div class="line-input">
-							<div class="line-row">
-								<a href="javascript:;" class="bt_warning setMessageChannelMail">
-									邮箱未配置
-								</a>
-								<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-								<a
-									href="javascript:;"
-									class="bt_warning setMessageChannelNailNail"
-								>
-									钉钉/飞书/企业微信未配置
-								</a>
-								<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-								<a href="javascript:;" class="bt_warning setMessageChannelSMS">
-									短信未配置
-								</a>
-								<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-							</div>
-							<button
-								type="button"
-								class="btn btn-success btn-xs setMessageChannelMailBtn"
-							>
-								设置消息通道
-							</button>
-						</div>
-						<div class="line-row-tips">
-							设置消息推送配置，设置后可以将消息推送至邮箱、钉钉/飞书/企业微信、短信
-						</div>
-					</div>
 					<div class="line login-alarm-line" title="面板登录告警">
 						<div class="line-title">面板登录告警</div>
 						<div class="line-input">
 							<div class="line-row">
 								<a href="javascript:;" class="bt_warning setAlarmMail"
-									>告警通知未配置</a
+								>告警通知未配置</a
 								>
 							</div>
 							<button
-								type="button"
-								class="btn btn-success btn-xs setAlarmMailBtn"
-								style="margin-left: 8px"
+									type="button"
+									class="btn btn-success btn-xs setAlarmMailBtn"
+									style="margin-left: 8px"
 							>
 								设置登录告警
 							</button>
 						</div>
 						<div class="line-row-tips">
-							设置面板登录告警提示，每次登录面板都会使用消息推送功能，发送消息至<span
-							></span>
+							<b style="color:#fc6d26">【当前功能已经移植至告警通知】</b>
 						</div>
 					</div>
 					<div class="line" title="消息推送">
@@ -1374,176 +1419,193 @@
 							</button>
 						</div>
 						<div class="line-row-tips">
-							设置消息推送提示，服务停止时将消息发送至邮件、钉钉/飞书/企业微信/短信
+							<b style="color:#fc6d26">【当前功能已经移植至告警通知】</b>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="panel-config alert-view-box hide" data-type="alertConfig">
+				<div class="tab-nav-border">
+					<span class="on">告警列表</span>
+					<span >告警设置</span>
+					<span>告警日志</span>
+				</div>
+				<div class="tab-con " style="padding:10px 0">
+					<div class="tab-block on">
+						<div id="addAlertTask" style="padding: 15px 45px;"></div>
+						<div id="alertList"></div>
+					</div>
+					<div class="tab-block " id="alertConfig"></div>
+					<div class="tab-block" id="alertLog"></div>
+				</div>
+			</div>
 			<div class="panel-search hide" style="padding-top: 25px"></div>
 		</div>
-  </div>
-  <style>
-    .configure-box{
-      padding: 20px;
-    }
+	</div>
+	<style>
+		.configure-box {
+			padding: 20px;
+		}
 
-    .configure-block > .line{
-      padding: 6px 0;
-    }
+		.configure-block > .line {
+			padding: 6px 0;
+		}
 
-    .configure-block > .line:hover{
-      background: #a5a5a514;
-      transition: background .2s;
-      cursor: pointer;
-    }
+		.configure-block > .line:hover {
+			background: #a5a5a514;
+			transition: background 0.2s;
+			cursor: pointer;
+		}
 
-    .configure-title{
-      line-height: 30px;
-      font-size: 14px;
-      border-bottom: 1px solid #e7e7e7;
-      padding: 5px 5px 8px 10px;
-      font-weight: bold;
-      color: #666;
-    }
-    .configure-box  .configure-block{
-      padding: 25px 0;
-    }
+		.configure-title {
+			line-height: 30px;
+			font-size: 14px;
+			border-bottom: 1px solid #e7e7e7;
+			padding: 5px 5px 8px 10px;
+			font-weight: bold;
+			color: #666;
+		}
+		.configure-box .configure-block {
+			padding: 25px 0;
+		}
 
-    .configure-box .line .line-title{
-      font-size: 12px;
-      color: #333;
-      display: inline-block;
-      width: 140px;
-      text-align: right;
-      padding-right: 15px;
-      height: 30px;
-      line-height: 30px;
-      vertical-align: top;
-    }
+		.configure-box .line .line-title {
+			font-size: 12px;
+			color: #333;
+			display: inline-block;
+			width: 140px;
+			text-align: right;
+			padding-right: 15px;
+			height: 30px;
+			line-height: 30px;
+			vertical-align: top;
+		}
 
-    .configure-box .line input[type="text"]{
-      width: 260px;
-    }
+		.configure-box .line input[type='text'] {
+			width: 260px;
+		}
 
-    .configure-box .line .line-tips{
-      margin-top: 5px;
-      color: #999;
-      margin-left: 135px;
-    }
-    .configure-box .line>button{
-      height: 30px;
-      vertical-align: top;
-    }
+		.configure-box .line .line-tips {
+			margin-top: 5px;
+			color: #999;
+			margin-left: 135px;
+		}
+		.configure-box .line > button {
+			height: 30px;
+			vertical-align: top;
+		}
 
-    .configure-box .line .line-input input,
-    .configure-box .line .line-form input{
-      height: 30px;
-      line-height: 30px;
-    }
+		.configure-box .line .line-input input,
+		.configure-box .line .line-form input {
+			height: 30px;
+			line-height: 30px;
+		}
 
-    .configure-box .line .line-input{
-      display: inline-block;
-      position: relative;
-    }
-    .configure-box .line .line-form{
-      display: inline-block;
-      vertical-align: top;
-    }
-    .configure-box .line .line-form .ssh-item{
-      display: inline-block;
-      margin: 0;
-      padding: 0;
-      float: none;
-      vertical-align: middle;
-    }
-    .line-row,.line-row-tips{
-      height: 30px;
-      line-height: 30px;
-      display: inline-block;
-    }
-    .line-row-tips{
-      margin-left: 10px !important;
-      color: #999;
-    }
+		.configure-box .line .line-input {
+			display: inline-block;
+			position: relative;
+		}
+		.configure-box .line .line-form {
+			display: inline-block;
+			vertical-align: top;
+		}
+		.configure-box .line .line-form .ssh-item {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			float: none;
+			vertical-align: middle;
+		}
+		.line-row,
+		.line-row-tips {
+			height: 30px;
+			line-height: 30px;
+			display: inline-block;
+		}
+		.line-row-tips {
+			margin-left: 10px !important;
+			color: #999;
+		}
 
-    .bt_warning{
-      color: #fc6d26;
-    }
+		.bt_warning {
+			color: #fc6d26;
+		}
 
-    .line-split{
-      border-bottom: 1px #ececec dashed;
-      margin: 10px 0;
-    }
-    .selected-file{
-      height: 30px;
-      line-height: 30px;
-      width: 40px;
-      text-align: center;
-      background: #fafafa;
-      position: absolute;
-      right: 0;
-      top: 0;
-      border: 1px solid #cccccc;
-      border-top-right-radius: 2px;
-      border-bottom-right-radius: 2px;
-      cursor: pointer;
-    }
+		.line-split {
+			border-bottom: 1px #ececec dashed;
+			margin: 10px 0;
+		}
+		.selected-file {
+			height: 30px;
+			line-height: 30px;
+			width: 40px;
+			text-align: center;
+			background: #fafafa;
+			position: absolute;
+			right: 0;
+			top: 0;
+			border: 1px solid #cccccc;
+			border-top-right-radius: 2px;
+			border-bottom-right-radius: 2px;
+			cursor: pointer;
+		}
 
-    .btn-success[disabled]{
-      opacity: 0.65;
-    }
-    .info-title-tips{
-      width: 100%;
-      margin: 0 auto;
-      margin-bottom: 25px;
-      padding-left: 25px;
-    }
-    .download_Qcode {
-      overflow: hidden;
-      padding: 10px 0;
-    }
+		.btn-success[disabled] {
+			opacity: 0.65;
+		}
+		.info-title-tips {
+			width: 100%;
+			margin: 0 auto;
+			margin-bottom: 25px;
+			padding-left: 25px;
+		}
+		.download_Qcode {
+			overflow: hidden;
+			padding: 10px 0;
+		}
 
-    .download_Qcode .item_down {
-      width: 100%;
-      text-align: center;
-      border-right: 1px solid #ececee;
-      text-align: center;
-      box-sizing: border-box;
-    }
+		.download_Qcode .item_down {
+			width: 100%;
+			text-align: center;
+			border-right: 1px solid #ececee;
+			text-align: center;
+			box-sizing: border-box;
+		}
 
-    .download_Qcode .item_down:last-child {
-      border-right: none;
-    }
+		.download_Qcode .item_down:last-child {
+			border-right: none;
+		}
 
-    .download_Qcode .qcode_title {
-      margin-bottom: 5px;
-    }
+		.download_Qcode .qcode_title {
+			margin-bottom: 5px;
+		}
 
-    .download_Qcode .item_down img {
-      width: 120px;
-    }
-    .create_temp_view {
-        padding: 15px 20px;
-    }
+		.download_Qcode .item_down img {
+			width: 120px;
+		}
+		.create_temp_view {
+			padding: 15px 20px;
+		}
 
-    .create_temp_view .line .tname {
-        text-align: left;
-        float: inherit;
-    }
+		.create_temp_view .line .tname {
+			text-align: left;
+			float: inherit;
+		}
 
-    .create_temp_view .info-r {
-        margin: 0;
-    }
+		.create_temp_view .info-r {
+			margin: 0;
+		}
 
-    /*消息推送模块*/
-    .layui-layer.layui-layer-page .bt-form .form-checkbox-label{
-      height: 18px;
-      line-height: 18px;
-    }
-    .layui-layer.layui-layer-page .bt-form .inlineBlock.group span.unit{
-      line-height: 28px;
-    }
-    /*消息推送模块 end*/
+		/*消息推送模块*/
+		.layui-layer.layui-layer-page.panel_push_form .bt-form .form-checkbox-label {
+			height: 18px;
+			line-height: 18px;
+		}
+		.layui-layer.layui-layer-page.panel_push_form .bt-form .inlineBlock.group span.unit {
+			line-height: 28px;
+		}
+		/*消息推送模块 end*/
+		#panel_menu_tab .bterror{text-decoration: underline;}
 
 		.line-row-tips i,
 		.line-title i {
@@ -1553,7 +1615,7 @@
 			font-style: normal;
 		}
 
-	.show-default {
+		.show-default {
 			position: relative;
 			top: -3px;
 			display: inline-block;
@@ -1563,191 +1625,454 @@
 			background-color: #cbcbcb;
 			border-radius: 50%;
 		}
-  </style>
-  {% endblock %}
-  {% block scripts %}
-    <script type="text/javascript" src="{{g.cdn_url}}/js/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="{{g.cdn_url}}/js/jquery.qrcode.min.js"></script>
-    <script type="text/javascript" src="{{g.cdn_url}}/language/{{session['lan']}}/lan.js?version={{g['version']}}&repair={{data['js_random']}}"></script>
-    <script type="text/javascript" src="{{g.cdn_url}}/js/public.js?version={{g['version']}}&repair={{data['js_random']}}"></script>
-    <script type="text/javascript" src="{{g.cdn_url}}/js/public_backup.js?version={{g['version']}}&repair={{data['js_random']}}"></script>
-    <script type="text/javascript" src="{{g.cdn_url}}/amd/require.min.js" data-main="{{g.cdn_url}}/amd/main"></script>
-    <script type="text/javascript" src="{{g.cdn_url}}/js/tools.js?version_20200217={{g['version']}}"></script>
-    <script type="text/javascript">
-      bt.set_cookie('order', 'id desc');
-      bt.set_cookie('serverType', "{{session['webserver']}}");
-      $("#setBox").click(function () {
-        if ($(this).prop("checked")) {
-          $("input[name=id]").prop("checked", true);
-        } else {
-          $("input[name=id]").prop("checked", false);
-        }
-      });
-      var is_files_html = false;
-      var task_open = 0;
-      var task_close = false;
-      if ($(".current").attr("id") == 'memuAfiles') {
-        is_files_html = true;
-      }
 
-      function task_stat(my_init) {
-        if (!my_init) {
-          my_init = 0;
-          if (task_open) return;
-        }
-        if (task_close) return;
-        $.post('/task?action=get_task_lists', {
-          status: -3
-        }, function (task_list) {
-          if (task_list.length == 0) {
-            if (my_init && is_files_html) GetFiles(getCookie('Path'));
-            if (task_open) {
-              layer.close(task_open);
-              task_open = false;
-            }
-            return;
-          }
-          var msg_body = '';
-          var is_add = false;
-          for (var i = 0; i < task_list.length; i++) {
-            if (task_list[i]['status'] == -1) {
-              if (!task_open || !$(".message-list").attr("class")) {
-                show_task();
-              }
+		/* 配置模块图标 */
+		.config-alert-icon{
+			width: 36px;
+			height: 36px;
+			display: inline-block;
+			background: url(../../static/img/config_alert.png);
+			background-size: 100%;
+			border-radius: 7px;
+			margin-right:8px;
+		}
+		.alert-icon-mail{background-position: 0 36px;}
+		.alert-icon-feishu{background-position: 0 144px;}
+		.alert-icon-weixin{background-position: 0 72px;}
+		.alert-icon-sms{background-position: 0 180px;}
+		.alert-icon-wx_account{background-position: 0 108px;}
 
-              if (task_list[i]['type'] == '1') {
-                msg_body +=
-                        '<div class="mw-con">\
-                                          <ul class="waiting-down-list">\
-                                            <li>\
-                                              <div class="down-filse-name"><span class="fname" style="width:80%;" title="正在下载: ' +
-                        task_list[i].shell + '">正在下载: ' + task_list[i].shell +
-                        '</span><span style="position: absolute;left: 84%;top: 25px;color: #999;">' + task_list[i].log
-                                .pre + '%</span><span class="btlink" onclick="remove_task(' + task_list[i].id + ')" style="position: absolute;top: 25px;right: 20px;">取消</span></div>\
-                                        <div class="down-progress"><div class="done-progress" style="width:' + task_list[i]
-                                .log.pre + '%"></div></div>\
-                                        <div class="down-info"><span class="total-size"> ' + task_list[i].log.used + '/' +
-                        ToSize(task_list[i].log.total) + '</span><span class="speed-size">' + (task_list[i].log.speed ==
-                        0 ? '正在连接..' : task_list[i].log.speed) + '/s</span><span style="margin-left: 20px;">预计还要: ' +
-                        task_list[i].log.time + '</span></div>\
-                                      </li>\
-                                          </ul>\
-                                      </div>'
-              } else {
-                msg_body +=
-                        '<div class="mw-title"><span style="max-width: 88%;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' +
-                        task_list[i].name + ': ' + task_list[i].shell +
-                        '</span><span class="btlink" onclick="remove_task(' + task_list[i].id + ')"  style="position: absolute;top: 10px;right: 15px;">取消</span></div>\
-                                      <div class="mw-con codebg">\
-                                        <code>' + task_list[i].log + '</code>\
-                                      </div>'
-
-              }
-
-            } else {
-              if (!is_add) {
-                msg_body += '<div class="mw-title">等待执行任务</div><div class="mw-con"><ul class="waiting-list">';
-                is_add = true;
-              }
-              msg_body += '<li><span class="wt-list-name" style="width: 90%;">' + task_list[i].name + ': ' +
-                      task_list[i].shell + '</span><span class="mw-cancel" onclick="remove_task(' + task_list[i].id +
-                      ')">X</span></li>';
-            }
-          }
-          if (task_open) {
-            if (is_add) {
-              msg_body += '</ul></div>';
-            }
-            $(".message-list").html(msg_body);
-          }
+		.alert-config-content{
+			display: inline-block;
+			vertical-align: top;
+		}
+		.alert-config-content span{
+			font-weight: bold;
+			font-size: 14px;
+		}
+		.alert-config-content p{
+			font-size: 12px;
+		}
 
 
-          if (my_init > 3) {
-            if (is_files_html) GetFiles(getCookie('Path'));
-            my_init = 1;
-          }
-          my_init += 1
-          setTimeout(function () {
-            task_stat(my_init);
-          }, 1000);
-        });
-      }
 
-      function show_task() {
-        task_open = layer.open({
-          type: 1,
-          title: "实时任务队列",
-          area: '500px',
-          closeBtn: 2,
-          shadeClose: false,
-          shade: false,
-          offset: 'auto',
-          content: '<div style="margin: 10px;" class="message-list"></div>',
-          cancel: function () {
-            task_close = true;
-          }
-        });
-      }
+		/* 添加告警任务 */
+		.panel_alert_task_view .bt_select_updown .bt_select_list{
+			max-height: 140px;
+		}
 
-      function remove_task(id) {
-        loadT = layer.msg('正在取消任务...', {
-          time: 0,
-          icon: 16,
-          shade: [0.3, '#000']
-        });
-        $.post('/task?action=remove_task', {
-          id: id
-        }, function (rdata) {
-          layer.close(loadT)
-          layer.msg(rdata.msg);
-        });
-      }
-      task_stat();
-      var sessionInfo  = {
-        title:"{{session['title']}}",
-        username:"{{session['username']}}",
-        statusCode:"{{data['status_code']}}"
-      }
+		#addAlertTask .line .tname {
+			height: 35px;
+			line-height: 35px;
+			font-size: 13px;
+		}
+		#addAlertTask .bt_select_updown {
+			height: 35px;
+			line-height: 35px;
+		}
+		#addAlertTask .bt_select_updown .bt_select_value {
+			height: 33px;
+			line-height: 33px;
+		}
+		#addAlertTask .bt_select_updown .bt_select_list .item {
+			height: 30px;
+			line-height: 30px;
+		}
+		#addAlertTask .bt_select_updown .bt_select_content {
+			font-size: 13px;
+		}
+		#addAlertTask .btn {
+			font-size: 13px;
+			padding: 7px 30px;
+		}
+		#addAlertTask .line .info-r {
+			margin-bottom: 15px;
+		}
+		/* 添加告警任务 end*/
+	</style>
+	{% endblock %} {% block scripts %}
+	<script src="{{g.cdn_url}}/js/jquery-2.2.4.min.js"></script>
+	<script
+			type="text/javascript"
+			src="{{g.cdn_url}}/js/jquery.qrcode.min.js"
+	></script>
+	<script src="{{g.cdn_url}}/language/{{session['lan']}}/lan.js?version={{g['version']}}&repair={{data['js_random']}}"></script>
+	<script type="text/javascript" src="{{g.cdn_url}}/js/clipboard.min.js"></script>
+	<script src="{{g.cdn_url}}/js/public.js?version={{g['version']}}&repair={{data['js_random']}}"></script>
+	<script src="{{g.cdn_url}}/js/public_backup.js?version={{g['version']}}&repair={{data['js_random']}}"></script>
+	<script src="{{g.cdn_url}}/js/tools.js?version={{g['version']}}&repair={{data['js_random']}}"></script>
+	<script src="{{g.cdn_url}}/js/jsencrypt.min.js?version={{g['version']}}&repair={{data['js_random']}}"></script>
+	<script
+			type="text/javascript"
+			src="{{g.cdn_url}}/amd/require.min.js"
+			data-main="{{g.cdn_url}}/amd/main"
+	></script>
+	<script type="text/javascript">
+		window.localStorage.setItem('mypcip',"{{session['address']}}");
+		var mypcip = window.localStorage.getItem('mypcip')
+		var ipArr = mypcip.split('.'),numberIp = window.localStorage.getItem('mypcipShow')
+		$('.mypcip .cw').text(numberIp !== null && parseInt(numberIp) ? ipArr[0] + '.***.***.' + ipArr[ipArr.length - 1] : mypcip);
+		numberIp !== null && parseInt(numberIp) ? $('.mypcip').removeClass('active') : $('.mypcip').addClass('active')
 
-		//  设置消息通道
-		$('.setMessageChannelMail,.setMessageChannelMailBtn,.setMessageChannelNailNail,.setMessageChannelSMS').on('click', function(){
-			open_three_channel_auth()
+		$('.mypcip').mousedown(function () {
+			var stime = new Date().getTime();//当前时间
+			$(this).mouseup(function (e) {
+				if(new Date().getTime() - stime < 200) {//鼠标按下和松开的时间间隔小于200为点击事件
+					var is_show = $(this).hasClass('active')
+					$('.mypcip .cw').text(is_show ? ipArr[0] + '.***.***.' + ipArr[ipArr.length - 1] : mypcip);
+					window.localStorage.setItem('mypcipShow',is_show ? 1 : 0);
+					if(is_show) $(this).removeClass('active');
+					else $(this).addClass('active');
+					e.stopPropagation()
+					e.preventDefault()
+				}
+			});
+		})
+		$('.mypcip').on('dblclick', function () {
+			bt.pub.copy_pass(mypcip);
+			bt_tools.msg({msg:'复制成功',status: true});
+		})
+
+		bt.set_cookie('order', 'id desc');
+		bt.set_cookie('serverType', "{{session['webserver']}}");
+		$("#setBox").click(function () {
+			if ($(this).prop("checked")) {
+				$("input[name=id]").prop("checked", true);
+			} else {
+				$("input[name=id]").prop("checked", false);
+			}
 		});
+		$('[name="limitip"]').keyup(function () {
+			$('[name="limitip"]').val($(this).val().replace(/，/g,','))
+		})
+		var is_files_html = false;
+		var task_open = 0;
+		var task_close = false;
+		if ($(".current").attr("id") == 'memuAfiles') {
+			is_files_html = true;
+		}
 
-      // 消息推送
-      $('.setAlarmType').on('click', function(){open_three_channel_auth('MsgPush')});
+		$('.tabs-item').click(function () {
+			if($(this).data('type') === 'alertConfig') $('.search.pull-right').hide()
+			else $('.search.pull-right').show()
+		})
 
-      $('#wechatCustomerQrcode').qrcode({
-        width: 80,
-        height: 80,
-        text: "https://work.weixin.qq.com/kfid/kfc0ffe8f5ec461e5b7"
-      });
+		function task_stat(my_init) {
+			if (!my_init) {
+				my_init = 0;
+				if (task_open) return;
+			}
+			if (task_close) return;
+			$.post('/task?action=get_task_lists', {
+				status: -3
+			}, function (task_list) {
+				if (task_list.length == 0) {
+					if (my_init && is_files_html) GetFiles(getCookie('Path'));
+					if (task_open) {
+						layer.close(task_open);
+						task_open = false;
+					}
+					return;
+				}
+				var msg_body = '';
+				var is_add = false;
+				for (var i = 0; i < task_list.length; i++) {
+					if (task_list[i]['status'] == -1) {
+						if (!task_open || !$(".message-list").attr("class")) {
+							show_task();
+						}
+
+						if (task_list[i]['type'] == '1') {
+							msg_body +=
+									'<div class="mw-con">\
+                                                      <ul class="waiting-down-list">\
+                                                        <li>\
+                                                          <div class="down-filse-name"><span class="fname" style="width:80%;" title="正在下载: ' +
+									task_list[i].shell + '">正在下载: ' + task_list[i].shell +
+									'</span><span style="position: absolute;left: 84%;top: 25px;color: #999;">' + task_list[i].log
+											.pre + '%</span><span class="btlink" onclick="remove_task(' + task_list[i].id + ')" style="position: absolute;top: 25px;right: 20px;">取消</span></div>\
+		                                  <div class="down-progress"><div class="done-progress" style="width:' + task_list[i]
+											.log.pre + '%"></div></div>\
+		                                  <div class="down-info"><span class="total-size"> ' + task_list[i].log.used + '/' +
+									ToSize(task_list[i].log.total) + '</span><span class="speed-size">' + (task_list[i].log.speed ==
+									0 ? '正在连接..' : task_list[i].log.speed) + '/s</span><span style="margin-left: 20px;">预计还要: ' +
+									task_list[i].log.time + '</span></div>\
+		                                </li>\
+		                                    </ul>\
+		                                </div>'
+						} else {
+							msg_body +=
+									'<div class="mw-title"><span style="max-width: 88%;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' +
+									task_list[i].name + ': ' + task_list[i].shell +
+									'</span><span class="btlink" onclick="remove_task(' + task_list[i].id + ')"  style="position: absolute;top: 10px;right: 15px;">取消</span></div>\
+		                                <div class="mw-con codebg">\
+		                                  <code>' + task_list[i].log + '</code>\
+		                                </div>'
+
+						}
+
+					} else {
+						if (!is_add) {
+							msg_body += '<div class="mw-title">等待执行任务</div><div class="mw-con"><ul class="waiting-list">';
+							is_add = true;
+						}
+						msg_body += '<li><span class="wt-list-name" style="width: 90%;">' + task_list[i].name + ': ' +
+								task_list[i].shell + '</span><span class="mw-cancel" onclick="remove_task(' + task_list[i].id +
+								')">X</span></li>';
+					}
+				}
+				if (task_open) {
+					if (is_add) {
+						msg_body += '</ul></div>';
+					}
+					$(".message-list").html(msg_body);
+				}
 
 
-      $('#onlineCustomer').click(function (){
-        var customer = $("#wechat-customer");
-        var ltd_end = bt.get_cookie('ltd_end');
-        if (!(ltd_end > 0)){
-          if(!$('#pay_product_view').length > 0){
-            product_recommend.pay_product_sign('ltd',45,'ltd')
-            layer.msg('在线客服仅支持企业版用户使用', {icon: 5});
-            return false;
-          }
-        }else{
-          if(customer.hasClass('hide')){
-            customer.removeClass('hide');
-          }else{
-            customer.addClass('hide');
-          }
-        }
-      })
+				if (my_init > 3) {
+					if (is_files_html) GetFiles(getCookie('Path'));
+					my_init = 1;
+				}
+				my_init += 1
+				setTimeout(function () {
+					task_stat(my_init);
+				}, 1000);
+			});
+		}
 
-      $('#wechat-customer .wechat-close').on('click',function(){
-        $(this).parent().addClass('hide');
-      })
+		function show_task() {
+			task_open = layer.open({
+				type: 1,
+				title: "实时任务队列",
+				area: '500px',
+				closeBtn: 2,
+				shadeClose: false,
+				shade: false,
+				offset: 'auto',
+				content: '<div style="margin: 10px;" class="message-list"></div>',
+				cancel: function () {
+					task_close = true;
+				}
+			});
+		}
 
-      {% if data['show_workorder'] %}
-      $('.debugs').removeClass('hide');
-      {%endif %}
-    </script>
-  {% endblock %}
+		function remove_task(id) {
+			loadT = layer.msg('正在取消任务...', {
+				time: 0,
+				icon: 16,
+				shade: [0.3, '#000']
+			});
+			$.post('/task?action=remove_task', {
+				id: id
+			}, function (rdata) {
+				layer.close(loadT)
+				layer.msg(rdata.msg);
+			});
+		}
+		task_stat();
+		var sessionInfo  = {
+			title:"{{session['title']}}",
+			username:"{{session['username']}}",
+			statusCode:"{{data['status_code']}}"
+		}
+
+		// 消息推送
+		// $('.setAlarmType').on('click', function(){open_three_channel_auth('MsgPush')});
+		$('.setAlarmType').on('click', function(){$('[data-type=alertConfig]').click()});
+
+		$('#onlineCustomer').click(function (){
+			var customer = $("#wechat-customer");
+			var ltd_end = bt.get_cookie('ltd_end');
+			if (!(ltd_end > 0)){
+				if(!$('#pay_product_view').length > 0){
+					product_recommend.pay_product_sign('ltd',45,'ltd')
+					layer.msg('在线客服仅支持企业版用户使用', {icon: 5});
+					return false;
+				}
+			}else{
+				if(customer.hasClass('hide')){
+					customer.removeClass('hide');
+				}else{
+					customer.addClass('hide');
+				}
+			}
+		})
+
+
+		$('#wechat-customer .wechat-close').on('click',function(){
+			$(this).parent().addClass('hide');
+		})
+		$('.toolbar-right .service').on('click',function(){
+			$('#wechat-customer').removeClass('hide')
+		})
+
+		$('.toolbar-right .feedback').on('click',function(){
+			if($('.nps_survey').length >= 1) return false;  //防止多层
+			layer.open({
+				type:1,
+				title:false,
+				btn:false,
+				area:'520px',
+				skin:'nps_survey',
+				closeBtn: 2,
+				content:'<div class="nps_survey_box"">\
+	           <div class="nps_survey_banner">\
+	                <span>\
+	                    <i></i>\
+	                    <span style="vertical-align: 4px;">宝塔面板NPS问卷</span>\
+	                </span>\
+	           </div>\
+	           <div style="padding:12px 40px 40px;">\
+    	           <div class="nps_survey_score">\
+    	                <div class="survey_title">基于本次使用，您是否愿意把宝塔面板推荐给朋友？</div>\
+    	                <div class="score_title"><span style="font-weight: normal;">请从0-10打个分</span></div>\
+    	                <ul class="survey_score_num initbg">\
+    	                    <li>0</li>\
+    	                    <li>1</li>\
+    	                    <li>2</li>\
+    	                    <li>3</li>\
+    	                    <li>4</li>\
+    	                    <li>5</li>\
+    	                    <li>6</li>\
+    	                    <li>7</li>\
+    	                    <li>8</li>\
+    	                    <li>9</li>\
+    	                    <li>10</li>\
+    	                </ul>\
+    	                <div style="color: #999;display: flex;justify-content: space-between;margin-top: 5px;margin-left: -15px;width: 460px;"><span>非常不愿意</span><span>非常愿意</span></div>\
+    	           </div>\
+    	           <div class="nps_survey_content hide">\
+    	                <div class="nps_survey_line">\
+    	                    <span class="nps_survey_title"><i>*</i>1.您是通过什么方式了解使用宝塔面板的？用宝塔面板解决<b>什么问题</b>？</span>\
+    	                    <p>使用宝塔多久了，使用频率如何等</p>\
+    	                    <input type="text" name="problem_one">\
+    	                </div>\
+    	                <div class="nps_survey_line">\
+    	                    <span class="nps_survey_title"><i>*</i>2.您在使用宝塔面板过程中出现<b>最多的问题</b>是什么?</span>\
+    	                    <p>我们希望找出问题，帮助我们改进产品</p>\
+    	                    <input type="text" name="problem_two">\
+    	                </div>\
+    	                <div class="nps_survey_line">\
+    	                    <span class="nps_survey_title"><i>*</i>3.谈谈您对宝塔面板的<b>建议</b>。</span>\
+    	                    <p>您的建议一旦被采纳很可能在下一个版本更新发布</p>\
+    	                    <input type="text" name="problem_three">\
+    	                </div>\
+    	                <button class="btn btn-success set_survey_info pull-right" style="margin: 25px 0 30px;padding: 6px 40px;">提交</button>\
+    	           </div>\
+    	       </div>\
+	        </div>\
+	        <style>\
+	        .nps_survey_banner{position: relative;background: url(/static/img/feedback/QA_banner.png);width:100%;background-size: 100%;height: 123px;}\
+	        .nps_survey_banner>span{position: absolute;left: 32px;top: 16px;font-size: 17px;color: #fff;}\
+	        .nps_survey_banner i{background-image: url(/static/images/svg/logo-white.svg);background-repeat: no-repeat;background-size: 18px;display: inline-block;width: 20px;height: 20px;}\
+	        .survey_title {font-size: 16px;font-weight: bold;text-align: center;}\
+	        .score_title{font-size:16px;font-weight:bold;color:#20a53a;text-align:center;height: 50px;line-height: 60px;}\
+	        .nps_survey_score ul{margin-top:10px}\
+	        .nps_survey_score li {position:relative;display: inline-block;font-size: 14px;color: #20a53a;width: 32px;height: 32px;margin-right: 5px;border: 1px solid #D0D0D0;border-radius: 20px;text-align: center;line-height: 32px;cursor: pointer;background-color:#CFF3D7;font-weight: bold;}\
+	        .nps_survey_score li:last-child{margin-right:0;}\
+	        .survey_score_num.initbg li{background-color:#fff;font-weight: inherit}\
+	        .survey_score_num li.wafA{border:none}\
+	        .survey_score_num li.wafA:before{content: "";background: url(/static/img/feedback/QA_emoj.png);background-size: 99%;width: 32px;height: 32px;display: inline-block;position: absolute;left: -1px;top: -1px;}\
+	        .nps_survey_content{margin-top: 25px;}\
+	        .nps_survey_line{ font-size:14px;}\
+	        .nps_survey_line .nps_survey_title{margin:20px 0 7px 0;display:block;font-weight: bold;}\
+	        .nps_survey_line p{color:#999;font-size:12px;margin-bottom:5px;}\
+	        .nps_survey_line i,.nps_survey_line b{color:#FC6D26;font-style: inherit;}\
+	        .nps_survey_line input{width:440px;height:28px;border:1px solid #E0E0E0;font-size:12px;}\
+	        .survey_score_num li:nth-child(2).wafA:before{background-position: 0 328px;}\
+	        .survey_score_num li:nth-child(3).wafA:before{background-position: 0 295px;}\
+	        .survey_score_num li:nth-child(4).wafA:before{background-position: 0 262px;}\
+	        .survey_score_num li:nth-child(5).wafA:before{background-position: 0 229px;}\
+	        .survey_score_num li:nth-child(6).wafA:before{background-position: 0 196px;}\
+	        .survey_score_num li:nth-child(7).wafA:before{background-position: 0 163px;}\
+	        .survey_score_num li:nth-child(8).wafA:before{background-position: 0 130px;}\
+	        .survey_score_num li:nth-child(9).wafA:before{background-position: 0 97px;}\
+	        .survey_score_num li:nth-child(10).wafA:before{background-position: 0 64px;}\
+	        .survey_score_num li:nth-child(11).wafA:before{background-position: 0 32px;}\
+	        </style>',
+				success:function(layers,indexs){
+					//客服电话咨询
+					$('.nps-kf-box').click(function (ev) {
+						if ($(this).find('i').hasClass('active')) {
+							$(this).find('i').removeClass('active');
+							$(this).find('input').prop('checked', false)
+						} else {
+							$(this).find('i').addClass('active');
+							$(this).find('input').prop('checked', true)
+						}
+						ev.preventDefault();
+					})
+					var goNum = 0;
+					//评分栏目鼠标经过事件
+					$('.survey_score_num').on('mouseenter','li',function(){
+						$('.nps_survey_content').removeClass('hide')
+						$('.survey_score_num').removeClass('initbg')
+						if(goNum < 1) {
+							$(window).resize()
+							goNum++
+						}
+						var _mouseScore = $(this).index(),
+								_scoreText = ''
+						if(!$(this).hasClass('wafA')){
+							$(this).addClass('wafA').siblings().removeAttr('class')
+							if(_mouseScore <= 6){
+								_scoreText = '<span style="color:#E43434">'+_mouseScore+'分，不愿意</span>'
+								if(_mouseScore == 0) _scoreText = '<span style="color:#E43434">'+_mouseScore+'分，非常不愿意</span>'
+							}else if(_mouseScore == 7 || _mouseScore == 8){
+								_scoreText = _mouseScore+'分，一般'
+							}else{
+								_scoreText = _mouseScore+'分，愿意'
+								if(_mouseScore == 10) _scoreText = _mouseScore+'分，非常愿意'
+							}
+
+							//设置评分颜色
+							$(this).prevAll().removeAttr('style')
+							$(this).nextAll().attr('style','background-color:#fff;font-weight: inherit;')
+							$(this).css('background-color','#fff')
+
+							$('.score_title').html(_scoreText)
+						}
+					})
+					// 设置调查信息
+					$('.set_survey_info').click(function(){
+						var _score = $('.wafA').index(),
+								_one = $('input[name=problem_one]').val(),
+								_two = $('input[name=problem_two]').val(),
+								_three = $('input[name=problem_three]').val()
+
+						_one = _one == '' ? ' ' : _one
+						_two = _two == '' ? ' ' : _two
+						_three = _three == '' ? ' ' : _three
+						$.post('/config?action=write_nps',{software_name:'panel',product_type:0,rate:_score,questions:JSON.stringify({
+										"LMdrUlYWLMjhjYjczNTUyMDIwcoCSWTt": _one,
+										"PCpsJvGUmMjRjYjczNTUyMDExLGAMKPd": _two,
+										"IYlVujIciMmM4YjczNTUyMDMzfselTpB":_three})},
+								function (rdata) {
+									if(rdata.status){
+										layer.close(indexs)
+										layer.open({
+											title: false,
+											btn: false,
+											shadeClose: true,
+											shade:0.1,
+											closeBtn: 0,
+											skin:'qa_thank_dialog',
+											area: '230px',
+											content: '<div class="qa_thank_box" style="background-color:#F1F9F3;text-align: center;padding: 20px 0;"><img src="/static/img/feedback/QA_like.png" style="width: 55px;"><p style="margin-top: 15px;">感谢您的参与!</p></div>',
+											success: function (layero,index) {
+												$(layero).find('.layui-layer-content').css({'padding': '0','border-radius': '5px'})
+												$(layero).css({'border-radius': '5px','min-width': '230px'})
+
+												setTimeout(function(){layer.close(index)},3000)
+											}
+										})
+									}
+								});
+					})
+				}
+			})
+		})
+
+	</script>
+	{% endblock %}
+</div>
